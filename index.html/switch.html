@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <!-- Link to external CSS file for styling -->
+    <link rel="stylesheet" href="styles.css">
+    <title>Switch Statement Example</title>
+</head>
+<body>
+  <h1>Switch Statement Demo</h1>
+  
+  <!-- Dropdown for selecting the weather -->
+  <label for="weather">What's the weather today?</label>
+  <select id="weather" onchange="showWeatherMessage()">
+      <option value="sunny">Sunny</option>
+      <option value="rainy">Rainy</option>
+      <option value="cloudy">Cloudy</option>
+      <option value="snowy">Snowy</option>
+      <option value="windy">Windy</option>
+  </select>
+  
+  <!-- Paragraph to display weather advice based on selection -->
+  <p id="weatherMessage">Weather Advice:</p> 
+  <!-- This paragraph will display the weather advice based on the selected option -->
+  
+  <script>
+    // JavaScript code for handling weather selection will go here
+     // Function to show a message based on the selected weather option
+    function showWeatherMessage() {
+      const weather = document.getElementById('weather').value;
+      let advice;
+
+      // Use a switch statement to determine the advice based on the selected weather
+      switch(weather) {
+        case "sunny":
+          // Advice for sunny weather
+          advice = "It's a beautiful day! Enjoy the sunshine.";
+          break;
+        case "rainy":
+          // Advice for rainy weather
+          advice = "Don't forget your umbrella!";
+          break;
+        case "cloudy":
+          // Advice for cloudy weather
+          advice = "It might rain later, be prepared.";
+          break;
+        case "snowy":
+          // Advice for snowy weather
+          advice = "Stay warm and drive safely!";
+          break;
+        case "windy":
+          // Advice for windy weather
+          advice = "Hold onto your hat, it's windy out there!";
+          break;
+        default:
+          // Advice for any other (unexpected) value
+          advice = "Please select a valid weather option.";
+      }
+
+      // Display the advice in the paragraph with id 'weatherMessage'
+      document.getElementById('weatherMessage').textContent = "Weather Advice: " + advice;
+    }
+  </script>
+</body>
+</html>

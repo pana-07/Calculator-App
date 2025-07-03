@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Link to external CSS file for styling -->
+    <link rel="stylesheet" href="styles.css">
+
+    </head>
+   <body>
+  <!-- Start of calculator table -->
+  <table border="1">
+    <tr>
+        <td colspan="4">
+            <input type="text" id="inputBox" value="0" readonly style="text-align: right;">
+        </td>
+    </tr>
+    <!-- Row for numbers 7, 8, 9 and multiply (x) -->
+    <tr>
+        <td><button onclick="press('7')">7</button></td>
+        <td><button onclick="press('8')">8</button></td>
+        <td><button onclick="press('9')">9</button></td>
+        <td><button onclick="press('x')">x</button></td>
+    </tr>
+    <!-- Row for numbers 4, 5, 6 and minus (-) -->
+    <tr>
+        <td><button onclick="press('4')">4</button></td>
+        <td><button onclick="press('5')">5</button></td>
+        <td><button onclick="press('6')">6</button></td>
+        <td><button onclick="press('-')">-</button></td>
+    </tr>
+    <!-- Row for numbers 1, 2, 3 and plus (+) -->
+    <tr>
+        <td><button onclick="press('1')">1</button></td>
+        <td><button onclick="press('2')">2</button></td>
+        <td><button onclick="press('3')">3</button></td>
+        <td><button onclick="press('+')">+</button></td>
+    </tr>
+    <!-- Row for 0, AC, and divide (/) -->
+    <tr>
+        <td colspan="2"><button style="width:100%;" onclick="press('0')">0</button></td>
+        <td><button onclick="clearInput()">AC</button></td>
+        <td><button onclick="press('/')">/</button></td>
+    </tr>
+    <!-- Calculate button -->
+    <tr>
+      <td colspan="4" style="padding:0;">
+        <button id="calculateButton" style="width:100%; height:60px; font-size:24px;" onclick="calculate()">Calculate</button>
+      </td>
+    </tr>
+  </table>
+  <!-- End of calculator table -->
+
+  <script>
+    // Add value to input box
+    function press(val) {
+      let box = document.getElementById('inputBox');
+      if (box.value === "0" || box.value === "Error") {
+        box.value = val;
+      } else {
+        box.value += val;
+      }
+    }
+
+    // Clear input box
+    function clearInput() {
+      document.getElementById('inputBox').value = "0";
+    }
+
+    // Calculate result
+    function calculate() {
+      let input = document.getElementById('inputBox').value.replace(/x/g, '*');
+      try {
+        let result = eval(input);
+        document.getElementById('inputBox').value = result;
+      } catch {
+        document.getElementById('inputBox').value = "Error";
+      }
+    }
+  </script>
+   </body>
+
+</html>

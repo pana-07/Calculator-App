@@ -1,0 +1,110 @@
+h1 {
+    color: blue;
+    font-size: 24px;
+}
+
+p {
+    color: green;
+    font-size: 18px;
+}
+/* Style the table */
+ /* Make all table cells the same size */
+      td {
+        width: 60px;
+        height: 60px;
+        text-align: center;
+        font-size: 24px;
+        padding: 0;
+        box-sizing: border-box; /* Add this to include border in size */
+      }
+
+      input[type="text"] {
+        width: 100%;
+        height: 40px;
+        font-size: 20px;
+        text-align: left;
+        box-sizing: border-box; /* Add this to prevent overflow */
+        border: none;           /* Optional: remove double border effect */
+        outline: none;
+        background: #fff;
+      }
+      /* Make all buttons fill their cell */
+      button {
+        width: 100%;
+        height: 100%;
+        font-size: 24px;
+        box-sizing: border-box;
+      }
+/* Style the table */
+ody {
+  background: #222;
+  font-family: 'San Francisco', Arial, sans-serif;
+}
+
+table {
+  margin: 40px auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  background: #222;
+}
+
+#inputBox {
+  background: #000;
+  color: #fff;
+  font-size: 2em;
+  border: none;
+  padding: 20px 10px;
+  border-radius: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button {
+  width: 60px;
+  height: 60px;
+  font-size: 1.5em;
+  border: none;
+  margin: 4px;
+  border-radius: 0; /* Changed from 50% to 0 to remove round shape */
+}
+
+button:active {
+  filter: brightness(0.9);
+}
+
+/* Number buttons */
+button:not(:last-child):not([onclick*="clearInput"]):not([onclick*="press('/')"]):not([onclick*="press('x')"]):not([onclick*="press('-')"]):not([onclick*="press('+')"]) {
+  background: #726969;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+/* Operator buttons */
+button[onclick*="press('/')"],
+button[onclick*="press('x')"],
+button[onclick*="press('-')"],
+button[onclick*="press('+')"] {
+  background: #ff9500;
+  color: #fff;
+}
+
+/* AC button */
+button[onclick*="clearInput"] {
+  background: #a5a5a5;
+
+}
+
+/* 0 button (span two columns) */
+td[colspan="2"] > button {
+  width: 128px;
+  border-radius: 0; /* Remove round shape for wide zero button */
+}
+
+/* Calculate button */
+#calculateButton {
+  background: #ff9500;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 0; /* Remove round shape for calculate button */
+}

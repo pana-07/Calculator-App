@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <p id="outputText"></p> <!-- This paragraph will display output from JavaScript -->
+
+    <script>
+        // Call someFunction, but it does not display anything because it doesn't return a value
+        someFunction(); 
+
+        // Function with a variable scoped only inside the function
+        function someFunction() {
+            var someVariable = 100;
+            // someVariable is only accessible inside this function (function scope)
+        }
+
+        // Display the result of someFunctionReturn in the paragraph
+        document.getElementById("outputText").innerHTML = someFunctionReturn(); 
+
+        // Function that returns a value, which can be used outside the function
+        function someFunctionReturn() {
+            var someVariable = 100; // This variable is also function-scoped
+            return someVariable; // This returns the value of someVariable
+        }
+    </script>
+</body>
+</html>
